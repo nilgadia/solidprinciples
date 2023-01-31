@@ -14,8 +14,8 @@
   execute the business policies
 * They are considered the "plumbing" or "internal" of <br>
   an application.
-* How the software should do various task.
-***Example of Low Level Module***
+* How the software should do various task.<br><br>
+***Example of Low Level Module***<br>
 * Data access
 * Logging
 * Network communication
@@ -70,3 +70,4 @@ changes to the internals of Module B may break
 functionality in Module A.
 </pre>
 >><pre>"We want to design components<br>that are self-contained:<br>independent, and with a single,<br>well-defined purpose" <br>Andrew Hunt & David Thomas, The Pragmatic Programmer</pre>
+![img.png](img.png)
