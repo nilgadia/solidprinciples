@@ -18,6 +18,9 @@ Enforces decoupling by isolating changes in specific components,
 works along with the SRP
 </pre>
 ***SOLID principles are most effective when applied together.***
+##### OCP Implementation Strategies
+* Inheritance
+* Strategy Pattern
 #### Progressively Applying the OCP
 * Start small - Make changes inline. Bug fixes can be implemented this way
 * More changes - Consider inheritance
