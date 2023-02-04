@@ -1,16 +1,16 @@
 ## Applying the Liskov Substitution Principle (LSP)
 ### Liskov Substitution Principle
-<pre>
+<pre style="font-size: medium;">
 If S is a subtype of T, then object of type T in a program
 may be replaced with objects of type S without
 modifying the functionality of the program.
 </pre>
-<pre>
+<pre style="font-size: medium;">
 Any object of a type must be substitutable by objects 
 of a derived typed without altering the correctness of 
 that program
 </pre>
-![img.png](images/img.png)
+![img.png](images/lsp.png)
 >><pre>Incorrect relationship between <br>type cause unexpected bugs or<br>    side effects.</pre>
 #### Violations Of The Liskov Substitution Principle
 <pre>
@@ -125,7 +125,7 @@ that program
 * Use "Tell, don't ask!" principle to eliminate type checking and casting.
 
 ### Apply the LSP in a Proactive way
-
+ 
 * Make sure that a derived type can substitute its base type completely
 * Keep base classes small and focused
 * Keep interface lean
