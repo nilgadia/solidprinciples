@@ -12,10 +12,9 @@ that program
 </pre>
 ![img.png](images/lsp.png)
 >><pre>Incorrect relationship between <br>type cause unexpected bugs or<br>    side effects.</pre>
-#### Violations Of The Liskov Substitution Principle
+### Violations Of The Liskov Substitution Principle
+#### A. Empty methods/Functions
 <pre>
-
-1) Empty methods/Functions
 
    class Bird {
       p v fly(int altitude){
@@ -33,7 +32,7 @@ that program
    Bird ostrich = new Ostrich();
    ostrich.fly(1000);
 
-   Fixed Empty methods/Functions***
+   Fixed Empty methods/Functions
 
    class Bird {
       // Bird data and capabilities
@@ -43,8 +42,9 @@ that program
    class Ostrich {
       // Ostrich data and capabilities. No fly method.
    }
-
-2) Partial Implemented Interfaces
+</pre>
+#### B) Partial Implemented Interfaces
+<pre>
 
    interface Account {
       void processLocalTransfer(double amount);
@@ -65,7 +65,9 @@ that program
        void processLocalTransfer(double amount){//Business logic here}
    }
 
-3) Type Checking
+</pre>
+#### C) Type Checking
+<pre>
  
    for (Task t : tasks) {
      if(t instanceof BugFix) {
@@ -91,8 +93,10 @@ that program
      // Task should be replaceable by BugFix
      t.setInProgress();
    }
-
-4) Harden Preconditions
+   
+</pre>
+#### D) Harden Preconditions
+<pre>
 
    class Rectangle {
       p v setHeight(int height){}
