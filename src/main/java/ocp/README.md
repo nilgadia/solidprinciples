@@ -4,7 +4,7 @@ Classes, functions, and modules should be closed for
 modification, but open for extension.
 </pre>
 ![](imges/ocp.png)
-![](imges/CodeRisk.png)
+![](imges/CodeRisk.png)<br>
 ![](imges/SolutionCodeRisk.png)
 
 ### Why Should You Apply the OCP?
