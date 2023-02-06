@@ -1,21 +1,22 @@
 ## Open Closed Principle
-<pre>
+<pre style="color: aqua; font-size: x-large">
 Classes, functions, and modules should be closed for
 modification, but open for extension.
 </pre>
-### OCP Definition Explained
 ![](imges/ocp.png)
 ![](imges/CodeRisk.png)
 ![](imges/SolutionCodeRisk.png)
+
+### Why Should You Apply the OCP?
 <pre>
-Why Should You Apply the OCP?
 
-New features can be added easily and with minimal cost
+1. New features can be added easily and with minimal cost
 
-Minimizes the risk of regression bugs
+2. Minimizes the risk of regression bugs
 
-Enforces decoupling by isolating changes in specific components,
-works along with the SRP
+3. Enforces decoupling by isolating changes in specific components,
+   works along with the SRP
+
 </pre>
 ***SOLID principles are most effective when applied together.***
 ##### OCP Implementation Strategies
@@ -37,21 +38,37 @@ works along with the SRP
 </pre>
 ***Strategy Pattern***
 <pre>
+
    Better approach is strategy pattern
 
-   interface MoneyTransfer {
+   interface MoneyTransferProcessor {
       v transferMoney(double amount)();
    }
 
-   class BankAccount implements MoneyTransfer{
+   class BankAccount implements MoneyTransferProcessor {
        @Override v transferMoney(double amount){
            // Business logic for local transfer
        }
    }
-   class InternationalBankAccount implements MoneyTransfer {
+   class InternationalBankAccount implements MoneyTransferProcessor  {
        @Override v transferMoney(double amount){
            // Business logic for international transfer
        }
+   }
+
+   class MoneyTransferProcessorFactory {
+      p v MoneyTransferProcessor build(TransferType type) {
+         if(type == TransferType.Local ) {
+             return new BankAccount();
+         } else if(type == TransferType.Intl ) {
+             return new InternationalBankAccount();
+         }
+      }
+   }
+
+   void processPayment(double amount, TransferType type) {
+       MoneyTransferProcessor mtp = factory.build(type);
+       mtp.transferMoney(amount);
    }
 </pre>
 #### Progressively Applying the OCP
