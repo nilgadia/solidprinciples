@@ -13,6 +13,7 @@ name doesn't strictly mean a java interface.
 <br>
 #### Fat Interface
 <pre>
+   
    Interface with Many Methods
 
    interface LoginService {
