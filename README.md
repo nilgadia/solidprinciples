@@ -20,7 +20,8 @@ Rigidity is the tendency for software to be difficult to change, even in simple 
 change causes a cascade of subsequent changes in dependent modules.
 - Robert C. Martin
 </pre>
-*Fragility and Rigidity are symptoms of high technical debt.*
+**Fragility and Rigidity are symptoms of high technical debt.**
+<br>
 ***Technical Debt***
 <pre>
 The cost of prioritizing fast delivery over code quality for long periods of time.
