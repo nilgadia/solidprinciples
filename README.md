@@ -22,7 +22,7 @@ change causes a cascade of subsequent changes in dependent modules.
 </pre>
 **Fragility and Rigidity are symptoms of high technical debt.**
 <br>
-***Technical Debt***
+### Technical Debt
 <pre>
 The cost of prioritizing fast delivery over code quality for long periods of time.
 </pre> 
