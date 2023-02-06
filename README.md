@@ -1,96 +1,64 @@
-## Modularizing Abstractions with the Interface Segregation Principle (ISP)
-### Interface Segregation Principle
-***Client should not be forced to depend on methods that do not use.***
-<pre>
-The "Interface" word in the principle
-name doesn't strictly mean a java interface.
-</pre>
-![img.png](images/img.png)
+<pre style="color: aqua; font-size: x-large">
+“It is not enough for code to work. Code that works is often badly broken.
+Programmers who satisfy themselves with merely working code are behaving 
+unprofessionally. They may fear that they don’t have time to improve the 
+structure and design of their code, but I disagree. Nothing has a more profound 
+and long-term degrading effect upon a development project than bad code.”
 
-#### Benefits of Applying the ISP
-* Lean interfaces minimize dependencies on unused members and reduce code coupling.
-* Code becomes more cohesive and focused
-* It reinforces the use of the SRP and LSP
+Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship 
+</pre>
+
+> ## <pre>SOLID principles are the <br> foundation on which we <br>    can build clean, <br> maintainable architectures.</pre>
+***Code Fragility*** 
+<pre>
+Fragility is the tendency of the software to break in many places every time it is changed.
+- Robert C. Martin
+</pre>
+***Code Rigidity***
+<pre>
+Rigidity is the tendency for software to be difficult to change, even in simple ways. Every 
+change causes a cascade of subsequent changes in dependent modules.
+- Robert C. Martin
+</pre>
+*Fragility and Rigidity are symptoms of high technical debt.*
+***Technical Debt***
+<pre>
+The cost of prioritizing fast delivery over code quality for long periods of time.
+</pre> 
+![TechnicalDebt.png](src/images/TechnicalDebt.png)
+![CostOfChange.png](src/images/CostOfChange.png)
+![CustomerResponsiveness](src/images/CustomerResponsiveness.png)
 <br>
-***Fat Interface***
-* Interface with Many Methods
+***Technical Debt Facts***
 <pre>
-   interface LoginService {
-      void signIn();
-      void signOut();
-      void updateRememberMeCookie();
-      User getUserDetails();
-      void setSessionExpiration(int session);
-      void validToken(Jwt token);
-   }
-</pre>
-* Throwing Exceptions
-<pre>
-   class GoogleLoginService extends LoginService {
-       void updateRememberMeCookie(){
-          throw new UnsupportedOperationException();
-       }
-       void setSessionExpiration(int session) {
-          throw new UnsupportedOperationException();
-       }
-   }
-</pre>
-* Interface with Low Cohesion
-<pre>
-   interface ShoppingCart {
-      void addItem(Item item);
-      void removeItem(Item item);
-      void processPayment();
-      boolean checkItemInStock(Item item);
-   }
-</pre>
-* Increased Coupling
-<pre>
-    class ShoppingCartImpl implements ShoppingCart {
-       v processPayment() {
-          PaymentService ps = new PaymentService();
-          ps.pay(this.totalAmount);
-          User user = UserService.getUserTransaction();
-          EmailService emailService = new EmailService();
-          emailService.notify(user);
-       }
-    }
-</pre>
-* Not just About Interfaces
-<pre>
-   abstract class Account {
-      abstract double getBalance();
-      abstract void processLocalPayment(double amount);
-      abstract void processInternationalPayment(double amount);
-   }
-</pre>
-* Empty Methods
-<pre>
-   class SchoolAccount extends Account {
-      void processInternationalTransfer(double amount){ 
-         // Do nothing. Better then throwing an error, right?
-         throw new RuntimeException("Not Implemented")
-      }
-   }
-</pre>
-****Symptoms of Interface Pollution****
-* Interface with lots of methods
-* Interface with low cohesion
-* Client throws exception instead of implementing method
-* Client provides empty implementation
-* Client force implementation and become highly coupled
-****Fixing Interface Pollution****
-<pre>
-Your own code
-Breaking Interface is pretty easy and safe due to the
-possibility to implement as many interfaces as we want
-</pre>
-<pre>
-External Legacy Code
-You can't control the interfaces in the external code,
-So you can use design pattern like "Adapter"
-</pre>
+No matter how good team is, technical debt will accumulate over time.
 
+Left uncontrolled, it will kill your project
 
->><pre>"Fat interface led to inadvertent <br> coupling between clients <br> that ought otherwise to be isolated "<br>Robert C. Martin</pre>
-Many clint specific interfaces are better than one general purpose interface
+The key is to keep it under control.
+
+write code        pay debt (code refactor)
+write more code   pay debt (code refactor)
+</pre>
+##### Controlling Technical Debt - Continuous code refactor
+#### SOLID Principles 
+Acronym for 5 software design principles that help us to keep technical debt under control.
+1. ***S***ingle Responsibility Principle
+2. ***O***pen Closed Principle
+3. ***L***iskov Substitution Principle
+4. ***I***nterface Segregation Principle
+5. ***D***ependency Inversion Principle 
+<br>
+
+***The Benefits of SOLID Code***
+* Easy to understand and reason about
+* Changes are faster and have a minimal risk level
+* Highly maintainable over long period of time
+* Cost-effective
+#### Other Ways to Keep Your Architecture Clean
+* Constant Refactoring
+* Design Patterns
+* Unit Testing (TDD)
+<br>
+
+![PyramidOfCleanCode](src/images/PyramidOfCleanCode.png)
