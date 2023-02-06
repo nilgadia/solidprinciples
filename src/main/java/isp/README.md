@@ -5,7 +5,7 @@
 The "Interface" word in the principle
 name doesn't strictly mean a java interface.
 </pre>
-![img.png](images/img.png)
+![isp.png](isp/img.png)
 
 #### Benefits of Applying the ISP
 * Lean interfaces minimize dependencies on unused members and reduce code coupling.
