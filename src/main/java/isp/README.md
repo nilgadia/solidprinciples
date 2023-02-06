@@ -119,7 +119,7 @@ possibility to implement as many interfaces as we want
       }
    }
 
-</pre>>
+</pre>
 <pre>
 External Legacy Code
 You can't control the interfaces in the external code,
