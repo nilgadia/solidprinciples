@@ -5,16 +5,16 @@
 The "Interface" word in the principle
 name doesn't strictly mean a java interface.
 </pre>
-![isp.png](images/isp.png)
-
+![](images/isp.png)
 #### Benefits of Applying the ISP
 * Lean interfaces minimize dependencies on unused members and reduce code coupling.
 * Code becomes more cohesive and focused
 * It reinforces the use of the SRP and LSP
 <br>
-***Fat Interface***
-* Interface with Many Methods
+#### Fat Interface
 <pre>
+   Interface with Many Methods
+
    interface LoginService {
       void signIn();
       void signOut();
@@ -24,7 +24,7 @@ name doesn't strictly mean a java interface.
       void validToken(Jwt token);
    }
 </pre>
-* Throwing Exceptions
+#### Throwing Exceptions
 <pre>
    class GoogleLoginService extends LoginService {
        void updateRememberMeCookie(){
@@ -35,7 +35,7 @@ name doesn't strictly mean a java interface.
        }
    }
 </pre>
-* Interface with Low Cohesion
+#### Interface with Low Cohesion
 <pre>
    interface ShoppingCart {
       void addItem(Item item);
@@ -44,7 +44,7 @@ name doesn't strictly mean a java interface.
       boolean checkItemInStock(Item item);
    }
 </pre>
-* Increased Coupling
+#### Increased Coupling
 <pre>
     class ShoppingCartImpl implements ShoppingCart {
        v processPayment() {
@@ -56,7 +56,7 @@ name doesn't strictly mean a java interface.
        }
     }
 </pre>
-* Not just About Interfaces
+#### Not just About Interfaces
 <pre>
    abstract class Account {
       abstract double getBalance();
@@ -64,7 +64,7 @@ name doesn't strictly mean a java interface.
       abstract void processInternationalPayment(double amount);
    }
 </pre>
-* Empty Methods
+#### Empty Methods
 <pre>
    class SchoolAccount extends Account {
       void processInternationalTransfer(double amount){ 
@@ -85,6 +85,40 @@ Your own code
 Breaking Interface is pretty easy and safe due to the
 possibility to implement as many interfaces as we want
 </pre>
+<pre>
+   From a Fat Interface
+
+   interface class Account {
+      abstract double getBalance();
+      abstract void processLocalPayment(double amount);
+      abstract void processInternationalPayment(double amount);
+   }
+
+   interface BankAccount {
+      abstract double getBalance();
+   }
+
+   interface LocalMoneyTransferCapability {
+      void processLocalPayment(double amount);
+   }
+ 
+   interface IntlMoneyTransferCapability {
+      void processInternationalPayment(double amount);
+   }
+
+   // Cohesive client
+   class SchoolAccount implements BankAccount, LocalMoneyTransferCapability {
+      // We can now correctly implement all the method
+   }
+
+   // Interface reuse
+   class InternationalLocalService implements IntlMoneyTransferCapability {
+      p v processInternationalPayment() {
+         // Process international payment
+      }
+   }
+
+</pre>>
 <pre>
 External Legacy Code
 You can't control the interfaces in the external code,
