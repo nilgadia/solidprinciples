@@ -10,7 +10,6 @@ name doesn't strictly mean a java interface.
 * Lean interfaces minimize dependencies on unused members and reduce code coupling.
 * Code becomes more cohesive and focused
 * It reinforces the use of the SRP and LSP
-<br>
 #### Fat Interface
 <pre>
    
