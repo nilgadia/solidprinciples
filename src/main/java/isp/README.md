@@ -79,7 +79,6 @@ name doesn't strictly mean a java interface.
 * Client throws exception instead of implementing method
 * Client provides empty implementation
 * Client force implementation and become highly coupled
-<br>
 ****Fixing Interface Pollution****
 <pre>
 Your own code
