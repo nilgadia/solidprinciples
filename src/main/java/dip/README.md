@@ -4,20 +4,23 @@
    **low level modules;** both should depend on abstractions. <br>
 2. **Abstractions** should not depend on details. <br>
    Details should depend on abstraction.
-<br>
+   
 ***High Level Modules***
+
 * Modules written to solve real problems and use cases.
 * They are more abstract and map to business domain.
 * What the software should do.
-<br>
+
 ***Low Level Modules***
+
 * Contain implementation details that are required to <br>
   execute the business policies
 * They are considered the "plumbing" or "internal" of <br>
   an application.
 * How the software should do various task.
-<br>
+
 ***Example of Low Level Module***
+
 * Data access
 * Logging
 * Network communication
@@ -130,6 +133,7 @@ to a class.
   repo.pay("123");
 </pre>
 ![](images/MoreComplexDependencies.png)
+<br>
 ![](images/HandlingDependencies.png)
 ## Inversion of Control
 <pre>
