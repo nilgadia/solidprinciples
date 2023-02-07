@@ -171,6 +171,7 @@ It makes sense to use it for some objects in an application
 ![](images/SolutionIoC.png)
 <br>
 ![](images/SolutionIocInjection.png)
+
 >><pre>The DIP, DI and IoC are the <br>most effective ways to <br>eliminate code coupling and<br>keep systems easy to<br>maintain and evolve</pre>
 <pre>
     "New is Glue"
