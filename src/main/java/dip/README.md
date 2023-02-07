@@ -25,7 +25,9 @@
 * Logging
 * Network communication
 * IO
+
 ![](images/dip.png)
+
 ## Abstraction 
 <pre>
 Something that are not concrete.
@@ -33,8 +35,11 @@ Something that you can not "new" up. In java applications,
 we tend to model abstractions using interfaces and 
 abstract classes.
 </pre>
+
 ![](images/dip1.png)
+
 ***Low Level Class***
+
 <pre>
   class SqlProductRepo {
      p Product getById(String productId) {
@@ -42,7 +47,9 @@ abstract classes.
      }
   }
 </pre>
+
 ***High Level Class***
+
 <pre>
   class PaymentProcessor {
      p v pay(String productId) {
@@ -52,7 +59,9 @@ abstract classes.
      }
   }
 </pre>
+
 ***Solution***
+
 <pre>
    Product Repository Abstraction
 
@@ -96,13 +105,17 @@ abstract classes.
 
 </pre>
 ![](images/ApplyingAbstraction.png)
+
 ## Dependency Injection
+
 <pre>
 A technique that allows the creation of dependent
 object outside of a class and provides those objects
 to a class.
 </pre>
+
 ***Still some coupling***
+
 <pre>
 
   The create inside method
@@ -156,6 +169,7 @@ It makes sense to use it for some objects in an application
 * Manages the lifecycle of objects and their configuration.
   Example - Spring Bean managed by IoC
 ![](images/SolutionIoC.png)
+<br>
 ![](images/SolutionIocInjection.png)
 >><pre>The DIP, DI and IoC are the <br>most effective ways to <br>eliminate code coupling and<br>keep systems easy to<br>maintain and evolve</pre>
 <pre>
