@@ -167,8 +167,8 @@ It makes sense to use it for some objects in an application
 * Make it easy to switch between different implementations at runtime
 * Increased program modularity
 * Manages the lifecycle of objects and their configuration.
-<br>
-  Example - Spring Bean managed by IoC
+
+  Example - Spring Bean managed by IoC <br>
   
 ![](images/SolutionIoC.png)<br>
 ![](images/SolutionIocInjection.png)
