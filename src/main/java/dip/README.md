@@ -167,9 +167,10 @@ It makes sense to use it for some objects in an application
 * Make it easy to switch between different implementations at runtime
 * Increased program modularity
 * Manages the lifecycle of objects and their configuration.
-  Example - Spring Bean managed by IoC
-![](images/SolutionIoC.png)
 <br>
+  Example - Spring Bean managed by IoC
+  
+![](images/SolutionIoC.png)<br>
 ![](images/SolutionIocInjection.png)
 
 >><pre>The DIP, DI and IoC are the <br>most effective ways to <br>eliminate code coupling and<br>keep systems easy to<br>maintain and evolve</pre>
