@@ -128,4 +128,4 @@ So you can use design pattern like "Adapter"
 
 
 >><pre>"Fat interface led to inadvertent <br> coupling between clients <br> that ought otherwise to be isolated "<br>Robert C. Martin</pre>
-***Many clint specific interfaces are better than one general purpose interface***
+***Many client specific interfaces are better than one general purpose interface***
