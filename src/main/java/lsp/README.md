@@ -117,7 +117,7 @@ that program
 
    Rectangle r = new Square();
    r.setHeight(10);
-   r.setWidth(20);
+   r.setWidth(20);    // The prolem looks here 
 
    r.calculateArea();  // Will return 400
 
